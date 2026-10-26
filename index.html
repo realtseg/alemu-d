@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alemu Dangura - Links</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            DEFAULT: '#800020',
+                            dark: '#5a0016'
+                        },
+                        offwhite: '#F9F8F8'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom animation for page load */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        /* Staggered delays for child elements */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        
+        /* Initial opacity 0 for delayed items */
+        .stagger-item {
+            opacity: 0;
+        }
+
+        /* Ripple Button Hover Effect styles */
+        .ripple-btn::before {
+            content: '';
+            position: absolute;
+            top: var(--y, 50%);
+            left: var(--x, 50%);
+            width: 0;
+            height: 0;
+            /* Padding trick to make a responsive circle based on element width */
+            padding: 150%; 
+            border-radius: 50%;
+            background-color: #ff3344; /* Brighter red color */
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .ripple-btn:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    </style>
+</head>
+<body class="bg-offwhite min-h-screen flex items-center justify-center font-sans px-4 py-12 selection:bg-burgundy selection:text-white">
+
+    <!-- Main Container -->
+    <div class="max-w-[600px] w-full mx-auto flex flex-col items-center">
+        
+        <!-- Profile Picture -->
+        <div class="animate-fade-in relative mb-4">
+            <img 
+                src="https://unavatar.io/youtube/@drmusicandvideoprodaction" 
+                alt="Alemu Dangura" 
+                onerror="this.src='https://ui-avatars.com/api/?name=Alemu+Dangura&background=800020&color=fff&size=150'"
+                class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover shadow-lg border-4 border-white"
+            >
+        </div>
+        
+        <!-- Name / Title -->
+        <h1 class="text-3xl font-bold text-burgundy mb-2 animate-fade-in stagger-item delay-100 text-center">
+            Alemu Dangura
+        </h1>
+        <p class="text-gray-600 mb-8 font-medium animate-fade-in stagger-item delay-100 text-center">
+            Evangelist and Gospel singer
+        </p>
+
+        <!-- Links Container -->
+        <div class="w-full flex flex-col gap-4">
+            
+            <!-- YouTube Link -->
+            <a href="https://www.youtube.com/@drmusicandvideoprodaction" target="_blank" rel="noopener noreferrer" 
+               class="ripple-btn stagger-item animate-fade-in delay-100 relative overflow-hidden flex items-center justify-center w-full py-4 px-6 bg-burgundy text-white rounded-full font-semibold text-lg transition-all duration-300 ease-in-out hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-burgundy/30 group">
+                <div class="relative z-10 flex items-center justify-center w-full">
+                    <i class="fa-brands fa-youtube absolute left-0 text-2xl group-hover:scale-110 transition-transform"></i>
+                    <span>YouTube</span>
+                </div>
+            </a>
+
+            <!-- Email Link -->
+            <a href="mailto:zemaralemudangura@gmail.com" 
+               class="ripple-btn stagger-item animate-fade-in delay-200 relative overflow-hidden flex items-center justify-center w-full py-4 px-6 bg-burgundy text-white rounded-full font-semibold text-lg transition-all duration-300 ease-in-out hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-burgundy/30 group">
+                <div class="relative z-10 flex items-center justify-center w-full">
+                    <i class="fa-solid fa-envelope absolute left-0 text-xl group-hover:scale-110 transition-transform"></i>
+                    <span>Email</span>
+                </div>
+            </a>
+
+            <!-- Telegram Link -->
+            <a href="https://t.me/Alemu_Dangura" target="_blank" rel="noopener noreferrer"
+               class="ripple-btn stagger-item animate-fade-in delay-300 relative overflow-hidden flex items-center justify-center w-full py-4 px-6 bg-burgundy text-white rounded-full font-semibold text-lg transition-all duration-300 ease-in-out hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-burgundy/30 group">
+                <div class="relative z-10 flex items-center justify-center w-full">
+                    <i class="fa-brands fa-telegram absolute left-0 text-2xl group-hover:scale-110 transition-transform"></i>
+                    <span>Telegram</span>
+                </div>
+            </a>
+
+            <!-- WhatsApp Link -->
+            <a href="https://wa.me/251911914228" target="_blank" rel="noopener noreferrer"
+               class="ripple-btn stagger-item animate-fade-in delay-400 relative overflow-hidden flex items-center justify-center w-full py-4 px-6 bg-burgundy text-white rounded-full font-semibold text-lg transition-all duration-300 ease-in-out hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-burgundy/30 group">
+                <div class="relative z-10 flex items-center justify-center w-full">
+                    <i class="fa-brands fa-whatsapp absolute left-0 text-2xl group-hover:scale-110 transition-transform"></i>
+                    <span>WhatsApp</span>
+                </div>
+            </a>
+
+            <!-- Phone Link -->
+            <a href="tel:+251911914228" 
+               class="ripple-btn stagger-item animate-fade-in delay-500 relative overflow-hidden flex items-center justify-center w-full py-4 px-6 bg-burgundy text-white rounded-full font-semibold text-lg transition-all duration-300 ease-in-out hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-burgundy/30 group">
+                <div class="relative z-10 flex items-center justify-center w-full">
+                    <i class="fa-solid fa-phone absolute left-0 text-xl group-hover:scale-110 transition-transform"></i>
+                    <span>Phone</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Script for calculating ripple position -->
+    <script>
+        document.querySelectorAll('.ripple-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function(e) {
+                // Get button's position and boundaries
+                const rect = this.getBoundingClientRect();
+                
+                // Calculate cursor's X and Y coordinates relative to the button
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                // Update CSS variables for the starting point of the animation
+                this.style.setProperty('--x', `${x}px`);
+                this.style.setProperty('--y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>
